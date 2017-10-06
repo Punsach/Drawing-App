@@ -14,6 +14,7 @@
 		E44031121F83399900FE1C81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44031101F83399900FE1C81 /* LaunchScreen.storyboard */; };
 		E440311D1F83399900FE1C81 /* Drawing_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E440311C1F83399900FE1C81 /* Drawing_AppTests.swift */; };
 		E44031281F83399900FE1C81 /* Drawing_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44031271F83399900FE1C81 /* Drawing_AppUITests.swift */; };
+		E45000251F84AAA5004DF7F1 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45000241F84AAA5004DF7F1 /* DrawView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E44031231F83399900FE1C81 /* Drawing AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Drawing AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44031271F83399900FE1C81 /* Drawing_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing_AppUITests.swift; sourceTree = "<group>"; };
 		E44031291F83399900FE1C81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E45000241F84AAA5004DF7F1 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		E44031061F83399900FE1C81 /* Drawing App */ = {
 			isa = PBXGroup;
 			children = (
+				E45000241F84AAA5004DF7F1 /* DrawView.swift */,
 				E44031071F83399900FE1C81 /* AppDelegate.swift */,
 				E44031091F83399900FE1C81 /* ViewController.swift */,
 				E440310B1F83399900FE1C81 /* Main.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				E440310A1F83399900FE1C81 /* ViewController.swift in Sources */,
 				E44031081F83399900FE1C81 /* AppDelegate.swift in Sources */,
+				E45000251F84AAA5004DF7F1 /* DrawView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +520,7 @@
 				E440312E1F83399900FE1C81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E440312F1F83399900FE1C81 /* Build configuration list for PBXNativeTarget "Drawing AppTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +529,7 @@
 				E44031311F83399900FE1C81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E44031321F83399900FE1C81 /* Build configuration list for PBXNativeTarget "Drawing AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +538,7 @@
 				E44031341F83399900FE1C81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

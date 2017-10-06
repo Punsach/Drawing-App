@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Drawing_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,212 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RE-NN-PMD">
+                                <rect key="frame" x="216" y="15" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearDrawing:" destination="BYZ-38-t0r" eventType="touchDown" id="KIx-Mp-6ng"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="icF-W5-UUJ">
+                                <rect key="frame" x="14" y="15" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeSize:" destination="BYZ-38-t0r" eventType="valueChanged" id="ssM-0u-yrZ"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="G04-aI-HX5">
+                                <rect key="frame" x="6" y="598" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="updateRed:" destination="BYZ-38-t0r" eventType="valueChanged" id="fMh-GT-khg"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Tu-Ud-IBV">
+                                <rect key="frame" x="250" y="598" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="updateBlue:" destination="BYZ-38-t0r" eventType="valueChanged" id="srA-Ju-gKq"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5r7-Af-dmJ">
+                                <rect key="frame" x="128" y="598" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="updateGreen:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ydi-lU-mW0"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4m-B8-HSX">
+                                <rect key="frame" x="155" y="15" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Erase"/>
+                                <connections>
+                                    <action selector="erase:" destination="BYZ-38-t0r" eventType="touchDown" id="cwQ-w4-Sxc"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ig0-7s-6Pj" customClass="DrawView" customModule="Drawing_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="53" width="375" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u93-nH-dvb">
+                                <rect key="frame" x="50" y="577" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdb-8R-XMr">
+                                <rect key="frame" x="164" y="578" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nj7-X6-GOW">
+                                <rect key="frame" x="292" y="579" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nQ2-Ye-XZO">
+                                <rect key="frame" x="22" y="629" width="330" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bt-dD-RrX">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.1817309634" blue="0.11034588820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="0.18173096344176864" blue="0.11034588816172919" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeRed:" destination="BYZ-38-t0r" eventType="touchDown" id="KXi-TQ-hym"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urQ-v7-aUh">
+                                        <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.69389232227616993" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="changeOrange:" destination="BYZ-38-t0r" eventType="touchDown" id="3hQ-Hu-Scy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULO-RS-8oQ">
+                                        <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.98224725190835582" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.9947924120524485" blue="0.0053615122121387637" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="changeYellow:" destination="BYZ-38-t0r" eventType="touchDown" id="Dbt-LG-wDL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFi-Nj-C2k">
+                                        <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.035045482817539497" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="changeGreen:" destination="BYZ-38-t0r" eventType="touchDown" id="EmI-aU-otY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bD8-HP-NQU">
+                                        <rect key="frame" x="240" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="changeBlue:" destination="BYZ-38-t0r" eventType="touchDown" id="ASC-6p-Day"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpO-NV-jcx">
+                                        <rect key="frame" x="300" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.6730296295797773" green="0.038200161438665892" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="changePurple:" destination="BYZ-38-t0r" eventType="touchDown" id="b0J-Nf-edN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="urQ-v7-aUh" firstAttribute="baseline" secondItem="3bt-dD-RrX" secondAttribute="baseline" id="0sM-kd-gP1"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="baseline" secondItem="urQ-v7-aUh" secondAttribute="baseline" id="0yK-9H-HqE"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="baseline" secondItem="XFi-Nj-C2k" secondAttribute="baseline" id="166-NU-Ugo"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="firstBaseline" secondItem="ULO-RS-8oQ" secondAttribute="firstBaseline" id="4xQ-Ka-QXt"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="firstBaseline" secondItem="urQ-v7-aUh" secondAttribute="firstBaseline" id="5BK-FI-1fI"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="baseline" secondItem="urQ-v7-aUh" secondAttribute="baseline" id="5p4-FQ-2Sa"/>
+                                    <constraint firstItem="ULO-RS-8oQ" firstAttribute="firstBaseline" secondItem="urQ-v7-aUh" secondAttribute="firstBaseline" id="7EI-yb-5dC"/>
+                                    <constraint firstItem="ULO-RS-8oQ" firstAttribute="baseline" secondItem="bD8-HP-NQU" secondAttribute="baseline" id="8Lh-AO-JXQ"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="baseline" secondItem="ULO-RS-8oQ" secondAttribute="baseline" id="8SL-N4-w1i"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="baseline" secondItem="dpO-NV-jcx" secondAttribute="baseline" id="9mL-K3-Ukn"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="baseline" secondItem="bD8-HP-NQU" secondAttribute="baseline" id="AJb-IK-7eW"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="firstBaseline" secondItem="dpO-NV-jcx" secondAttribute="firstBaseline" id="BvL-pq-dW7"/>
+                                    <constraint firstItem="urQ-v7-aUh" firstAttribute="baseline" secondItem="bD8-HP-NQU" secondAttribute="baseline" id="D02-bW-DgN"/>
+                                    <constraint firstItem="urQ-v7-aUh" firstAttribute="firstBaseline" secondItem="bD8-HP-NQU" secondAttribute="firstBaseline" id="Ex7-1g-JgG"/>
+                                    <constraint firstItem="bD8-HP-NQU" firstAttribute="firstBaseline" secondItem="XFi-Nj-C2k" secondAttribute="firstBaseline" id="HEl-iU-y8Y"/>
+                                    <constraint firstItem="bD8-HP-NQU" firstAttribute="firstBaseline" secondItem="3bt-dD-RrX" secondAttribute="firstBaseline" id="I7j-Bp-eR6"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="baseline" secondItem="urQ-v7-aUh" secondAttribute="baseline" id="Ikq-kE-Ycx"/>
+                                    <constraint firstItem="bD8-HP-NQU" firstAttribute="firstBaseline" secondItem="dpO-NV-jcx" secondAttribute="firstBaseline" id="Iv5-iL-igy"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="baseline" secondItem="ULO-RS-8oQ" secondAttribute="baseline" id="LoF-8V-4YV"/>
+                                    <constraint firstItem="bD8-HP-NQU" firstAttribute="baseline" secondItem="3bt-dD-RrX" secondAttribute="baseline" id="MFv-uv-kCk"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="firstBaseline" secondItem="bD8-HP-NQU" secondAttribute="firstBaseline" id="Mn9-9l-U5P"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="baseline" secondItem="bD8-HP-NQU" secondAttribute="baseline" id="N1x-gw-9XR"/>
+                                    <constraint firstItem="ULO-RS-8oQ" firstAttribute="baseline" secondItem="dpO-NV-jcx" secondAttribute="baseline" id="PCE-Ja-QC3"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="firstBaseline" secondItem="urQ-v7-aUh" secondAttribute="firstBaseline" id="Q5h-8h-2dB"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="firstBaseline" secondItem="3bt-dD-RrX" secondAttribute="firstBaseline" id="Qdp-AG-0V1"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="firstBaseline" secondItem="urQ-v7-aUh" secondAttribute="firstBaseline" id="R6i-6S-UAl"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="baseline" secondItem="XFi-Nj-C2k" secondAttribute="baseline" id="RIG-um-25F"/>
+                                    <constraint firstItem="urQ-v7-aUh" firstAttribute="baseline" secondItem="ULO-RS-8oQ" secondAttribute="baseline" id="SEb-0b-Hjw"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="baseline" secondItem="urQ-v7-aUh" secondAttribute="baseline" id="Shf-wW-fIl"/>
+                                    <constraint firstItem="urQ-v7-aUh" firstAttribute="firstBaseline" secondItem="XFi-Nj-C2k" secondAttribute="firstBaseline" id="Uh2-r7-dkj"/>
+                                    <constraint firstItem="ULO-RS-8oQ" firstAttribute="firstBaseline" secondItem="bD8-HP-NQU" secondAttribute="firstBaseline" id="V69-ni-eA2"/>
+                                    <constraint firstItem="ULO-RS-8oQ" firstAttribute="baseline" secondItem="dpO-NV-jcx" secondAttribute="baseline" id="Vbz-kW-L8x"/>
+                                    <constraint firstItem="bD8-HP-NQU" firstAttribute="firstBaseline" secondItem="ULO-RS-8oQ" secondAttribute="firstBaseline" id="VxM-zP-77a"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="firstBaseline" secondItem="ULO-RS-8oQ" secondAttribute="firstBaseline" id="WDI-1b-nt7"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="firstBaseline" secondItem="ULO-RS-8oQ" secondAttribute="firstBaseline" id="WZ9-Tr-8h3"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="baseline" secondItem="bD8-HP-NQU" secondAttribute="baseline" id="XTE-Kd-QQN"/>
+                                    <constraint firstItem="ULO-RS-8oQ" firstAttribute="firstBaseline" secondItem="3bt-dD-RrX" secondAttribute="firstBaseline" id="Zla-Ja-Y0S"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="firstBaseline" secondItem="ULO-RS-8oQ" secondAttribute="firstBaseline" id="aZH-lp-cQI"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="baseline" secondItem="urQ-v7-aUh" secondAttribute="baseline" id="ah5-4r-zDj"/>
+                                    <constraint firstItem="bD8-HP-NQU" firstAttribute="baseline" secondItem="urQ-v7-aUh" secondAttribute="baseline" id="ao0-fv-5eG"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="firstBaseline" secondItem="dpO-NV-jcx" secondAttribute="firstBaseline" id="b1z-WH-l1V"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="baseline" secondItem="XFi-Nj-C2k" secondAttribute="baseline" id="b83-PV-au0"/>
+                                    <constraint firstItem="bD8-HP-NQU" firstAttribute="baseline" secondItem="3bt-dD-RrX" secondAttribute="baseline" id="eJ8-bt-dRp"/>
+                                    <constraint firstItem="urQ-v7-aUh" firstAttribute="baseline" secondItem="ULO-RS-8oQ" secondAttribute="baseline" id="gwD-cD-rTc"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="baseline" secondItem="3bt-dD-RrX" secondAttribute="baseline" id="iGT-cV-ECg"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="firstBaseline" secondItem="bD8-HP-NQU" secondAttribute="firstBaseline" id="iHJ-0i-Vfp"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="firstBaseline" secondItem="dpO-NV-jcx" secondAttribute="firstBaseline" id="ikk-J1-Peo"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="baseline" secondItem="XFi-Nj-C2k" secondAttribute="baseline" id="kP9-Us-cvC"/>
+                                    <constraint firstItem="urQ-v7-aUh" firstAttribute="firstBaseline" secondItem="bD8-HP-NQU" secondAttribute="firstBaseline" id="ncv-TI-JfT"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="firstBaseline" secondItem="urQ-v7-aUh" secondAttribute="firstBaseline" id="oXC-a7-q9s"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="firstBaseline" secondItem="3bt-dD-RrX" secondAttribute="firstBaseline" id="rHW-uY-DFc"/>
+                                    <constraint firstItem="bD8-HP-NQU" firstAttribute="baseline" secondItem="XFi-Nj-C2k" secondAttribute="baseline" id="rNP-7R-PKI"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="baseline" secondItem="ULO-RS-8oQ" secondAttribute="baseline" id="riS-YQ-qg8"/>
+                                    <constraint firstItem="urQ-v7-aUh" firstAttribute="firstBaseline" secondItem="ULO-RS-8oQ" secondAttribute="firstBaseline" id="ttg-09-rUF"/>
+                                    <constraint firstItem="3bt-dD-RrX" firstAttribute="baseline" secondItem="ULO-RS-8oQ" secondAttribute="baseline" id="vHY-da-xOM"/>
+                                    <constraint firstItem="ULO-RS-8oQ" firstAttribute="firstBaseline" secondItem="dpO-NV-jcx" secondAttribute="firstBaseline" id="vLP-qG-lcK"/>
+                                    <constraint firstItem="dpO-NV-jcx" firstAttribute="firstBaseline" secondItem="bD8-HP-NQU" secondAttribute="firstBaseline" id="wEb-np-Irz"/>
+                                    <constraint firstItem="urQ-v7-aUh" firstAttribute="firstBaseline" secondItem="dpO-NV-jcx" secondAttribute="firstBaseline" id="xGf-tD-g8S"/>
+                                    <constraint firstItem="XFi-Nj-C2k" firstAttribute="firstBaseline" secondItem="3bt-dD-RrX" secondAttribute="firstBaseline" id="y5B-Y5-6SL"/>
+                                    <constraint firstItem="ULO-RS-8oQ" firstAttribute="baseline" secondItem="bD8-HP-NQU" secondAttribute="baseline" id="yva-8H-Gev"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBH-C3-m0D">
+                                <rect key="frame" x="273" y="15" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Undo"/>
+                                <connections>
+                                    <action selector="undoLast:" destination="BYZ-38-t0r" eventType="touchDown" id="zt3-lP-G43"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="blueSlider" destination="1Tu-Ud-IBV" id="dLE-lx-QIC"/>
+                        <outlet property="greenSlider" destination="5r7-Af-dmJ" id="ZKz-Or-sQO"/>
+                        <outlet property="myView" destination="Ig0-7s-6Pj" id="gdr-YU-Pqz"/>
+                        <outlet property="redSlider" destination="G04-aI-HX5" id="VU7-3M-geQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="33" y="57"/>
         </scene>
     </scenes>
 </document>
